@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.input.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.40" fx:controller="fotofinish.FXMLDocumentController">
+   <children>
+      <BorderPane layoutX="229.0" layoutY="89.0" prefHeight="700.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <MenuBar BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                        <MenuItem fx:id="openMenuoption" mnemonicParsing="false" onAction="#handleButtonAction" text="Open">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem fx:id="saveMenuoption" mnemonicParsing="false" onAction="#handleButtonAction" text="Save">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                        <MenuItem fx:id="saveAsMenuoption" mnemonicParsing="false" onAction="#handleButtonAction" text="Save as">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="DOWN" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                    <MenuItem fx:id="quitMenuaction" mnemonicParsing="false" onAction="#handleButtonAction" text="Quit">
+                           <accelerator>
+                              <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                           </accelerator>
+                        </MenuItem>
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
+         <center>
+            <SplitPane dividerPositions="0.1636060100166945" prefHeight="160.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="669.0" prefWidth="155.0">
+                     <children>
+                        <SplitPane dividerPositions="0.6371814092953523" layoutX="-34.0" layoutY="169.0" orientation="VERTICAL" prefHeight="669.0" prefWidth="216.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <items>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" text="Filters" />
+                                    <Button fx:id="sepiaButton" layoutX="14.0" layoutY="30.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Sepia" />
+                                    <Button fx:id="grayscaleButton" layoutX="14.0" layoutY="56.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Grayscale" />
+                                    <Button fx:id="instantButton" layoutX="14.0" layoutY="82.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Instant" />
+                                    <Button fx:id="noneButton" layoutX="14.0" layoutY="108.0" mnemonicParsing="false" onAction="#handleButtonAction" text="None" />
+                                    <Button fx:id="slidersButton" layoutX="14.0" layoutY="134.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Sliders" />
+                                 </children>
+                              </AnchorPane>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="14.0" text="Label" />
+                                    <ColorPicker fx:id="brushColorpicker" layoutX="14.0" layoutY="30.0" onAction="#handleButtonAction" />
+                                    <Label layoutX="14.0" layoutY="56.0" text="Brush Type" />
+                                    <RadioButton layoutX="14.0" layoutY="72.0" mnemonicParsing="false" text="Circle">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="brushTypeRadioGroup" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton layoutX="14.0" layoutY="90.0" mnemonicParsing="false" text="Square" toggleGroup="$brushTypeRadioGroup" />
+                                    <RadioButton layoutX="14.0" layoutY="110.0" mnemonicParsing="false" text="Spraypaint" toggleGroup="$brushTypeRadioGroup" />
+                                    <Label layoutX="14.0" layoutY="128.0" text="Brush Size" />
+                                    <TextField layoutX="13.0" layoutY="144.0" prefHeight="26.0" prefWidth="99.0" />
+                                 </children>
+                              </AnchorPane>
+                          </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="151.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true" />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
